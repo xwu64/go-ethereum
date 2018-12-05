@@ -357,7 +357,7 @@ func makeDifficultyCalculator(bombDelay *big.Int) func(time uint64, parent *type
 
 		// (2 if len(parent_uncles) else 1) - (block_timestamp - parent_timestamp) // 9
 		x.Sub(bigTime, bigParentTime)
-		x.Div(x, big9)
+		x.Div(x, big1)
 		if parent.UncleHash == types.EmptyUncleHash {
 			x.Sub(big1, x)
 		} else {
